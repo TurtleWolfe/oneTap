@@ -15,6 +15,11 @@ export default function useCachedResources() {
         // Load fonts
         await Font.loadAsync({
           ...Ionicons.font,
+          'Sacremento': require('../assets/fonts/Sacramento/Sacramento-Regular.ttf'),
+          'CharterBoldItalic': require('../assets/fonts/CharterBoldItalic.otf'),
+          'CharterRegular': require('../assets/fonts/CharterRegular.otf'),
+          'CharterItalic': require('../assets/fonts/CharterItalic.otf'),
+          'CharterBold': require('../assets/fonts/CharterBold.otf'),
           'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
         });
       } catch (e) {

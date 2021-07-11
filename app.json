@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "oneTap",
-    "slug": "oneTap",
+    "name": "OneTapOneMatch",
+    "slug": "OneTapOneMatch",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -29,6 +29,9 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "One Tap, One Match.",
+    "primaryColor": "#ff0000",
+    "backgroundColor": "#ffffff"
   }
 }
