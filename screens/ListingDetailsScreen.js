@@ -11,7 +11,7 @@ import { Image } from "react-native-expo-image-cache";
 import colors from "../config/colors";
 import ContactSellerForm from "../components/ContactSellerForm";
 import ListItem from "../components/lists/ListItem";
-import Text from "../components/Text";
+import Text from "../components/AppText";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 function ListingDetailsScreen({ route }) {

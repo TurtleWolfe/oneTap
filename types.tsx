@@ -10,10 +10,15 @@ export type RootStackParamList = {
 
 export type BottomTabParamList = {
   TabOne: undefined;
+  Home: undefined;
   TabTwo: undefined;
+  Cart: undefined;
   TabThree: undefined;
+  Uploads: undefined;
   TabFour: undefined;
+  Profile: undefined;
   TabFive: undefined;
+  Settings: undefined;
 };
 
 export type TabOneParamList = {

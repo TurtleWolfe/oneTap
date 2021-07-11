@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 import { useNetInfo } from "@react-native-community/netinfo";
 
-import Text from "./Text";
+import Text from "./AppText";
 import colors from "../config/colors";
 
 function OfflineNotice(props) {
