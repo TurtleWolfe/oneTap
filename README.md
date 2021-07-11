@@ -315,6 +315,7 @@ expo install expo-secure-store
 expo install jwt-decode
 expo install moment
 expo install react-native-fast-image
+bump
 ```
 
 ## [Part 2:](https://codewithmosh.com/courses/955852/ 'Mosh HameDani')
