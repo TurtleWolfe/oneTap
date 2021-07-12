@@ -32,6 +32,7 @@
     },
     "description": "One Tap, One Match.",
     "primaryColor": "#ff0000",
-    "backgroundColor": "#ffffff"
+    "backgroundColor": "#ffffff",
+    "githubUrl": "https://github.com/TurtleWolfe/oneTap"
   }
 }
