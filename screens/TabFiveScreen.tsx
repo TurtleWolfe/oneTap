@@ -8,7 +8,7 @@ import {
 } from '../components/Themed';
 
 //  App components
-// import AppButton from '../components/AppButton';
+import AppButton from '../components/AppButton';
 // import AppCard from '../components/AppCard';
 // import AppCategoryPickerItem from '../components/AppCategoryPickerItem';
 // import AppIcon from '../components/AppIcon';
@@ -77,7 +77,7 @@ export default function TabFiveScreen() {
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
       {/* <AppListItemSeparator /> */}
       <Text style={styles.title}>Components</Text>
-      {/* <AppButton /> */}
+      <AppButton />
       {/* <AppCard /> */}
 
       {/* <AppCard

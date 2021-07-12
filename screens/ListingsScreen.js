@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
 import ActivityIndicator from "../components/ActivityIndicator";
-import Button from "../components/Button";
+import Button from "../components/AppButton";
 import Card from "../components/Card";
 import colors from "../config/colors";
 import listingsApi from "../api/listings";
