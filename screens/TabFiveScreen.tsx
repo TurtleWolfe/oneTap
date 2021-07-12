@@ -35,15 +35,16 @@ import AppText from '../components/AppText';
 import AppListItemSeparator from '../components/lists/AppListItemSeparator';
 
 //  App component Screens
-// import AccountScreen from './componentScreens/AccountScreen';
-// import ListingDetailsScreen from './componentScreens/ListingDetailsScreen';
-// import ListingEditScreen from './componentScreens/ListingEditScreen';
-// import ListingsScreen from './componentScreens/ListingsScreen';
-// import LoginScreen from './componentScreens/LoginScreen';
-// import MessagesScreen from './componentScreens/MessagesScreen';
-// import RegisterScreen from './componentScreens/RegisterScreen';
-// import ViewImgageScreen from './componentScreens/ViewImageScreen';
-// import WelcomeScreen from './componentScreens/WelcomeScreen';
+// import AccountScreen from './AccountScreen';
+// import ListingDetailsScreen from './ListingDetailsScreen';
+// import ListingEditScreen from './ListingEditScreen';
+// import ListingsScreen from './ListingsScreen';
+// import LoginScreen from './LoginScreen';
+// import MessagesScreen from './MessagesScreen';
+// import RegisterScreen from './RegisterScreen';
+// import ViewImgageScreen from './ViewImageScreen';
+import ViewImgageScreen from './ViewImageScreen';
+// import WelcomeScreen from './WelcomeScreen';
 
 import Palette from '../config/palette';
 import defaultStyles from '../config/styles';
@@ -70,14 +71,14 @@ export default function TabFiveScreen() {
   // }
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Five</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      {/* <Text style={styles.title}>Tab Five</Text> */}
+      {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
       {/* <EditScreenInfo path="/screens/TabFiveScreen.tsx" /> */}
 
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
       {/* <AppListItemSeparator /> */}
-      <Text style={styles.title}>Components</Text>
-      <AppButton />
+      {/* <Text style={styles.title}>Components</Text> */}
+      {/* <AppButton /> */}
       {/* <AppCard /> */}
 
       {/* <AppCard
@@ -107,7 +108,7 @@ export default function TabFiveScreen() {
 
       {/* <AppPickerItem /> */}
       {/* <AppScreen /> */}
-      <AppText />
+      {/* <AppText /> */}
 
       {/* <AppTextInput /> */}
 
@@ -119,8 +120,8 @@ export default function TabFiveScreen() {
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
 
       {/* <AppListItemSeparator /> */}
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text style={styles.title}>form Components</Text>
+      {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
+      {/* <Text style={styles.title}>form Components</Text> */}
 
       {/* <AppErrorMessage /> */}
       {/* <AppForm /> */}
@@ -147,8 +148,8 @@ export default function TabFiveScreen() {
       {/* <AppSubmitButton /> */}
 
       {/* <AppListItemSeparator /> */}
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text style={styles.title}>list Components</Text>
+      {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
+      {/* <Text style={styles.title}>list Components</Text> */}
 
       {/* <AppListItem /> */}
 
@@ -187,7 +188,7 @@ export default function TabFiveScreen() {
       {/* <LoginScreen /> */}
       {/* <MessagesScreen /> */}
       {/* <RegisterScreen /> */}
-      {/* <ViewImgageScreen /> */}
+      <ViewImgageScreen />
       {/* <WelcomeScreen /> */}
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
     </View>
