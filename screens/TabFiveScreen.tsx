@@ -9,9 +9,10 @@ import {
 
 //  App components
 import AppButton from '../components/AppButton';
-// import AppCard from '../components/AppCard';
+import AppCard from '../components/AppCard';
 // import AppCategoryPickerItem from '../components/AppCategoryPickerItem';
 // import AppIcon from '../components/AppIcon';
+import AppIcon from '../components/Icon';
 // import AppImageInput from '../components/AppImageInput';
 // import AppImageInputList from '../components/AppImageInputList';
 // import AppPicker from '../components/AppPicker';
@@ -30,13 +31,13 @@ import AppText from '../components/AppText';
 // import AppSubmitButton from '../components/forms/AppSubmitButton';
 
 //  App lists Components
-// import AppListItem from '../components/lists/AppListItem';
+import AppListItem from '../components/lists/AppListItem';
 // import AppListItemDeleteAction from '../components/lists/AppListItemDeleteAction';
 import AppListItemSeparator from '../components/lists/AppListItemSeparator';
 
 //  App component Screens
 // import AccountScreen from './AccountScreen';
-// import ListingDetailsScreen from './ListingDetailsScreen';
+import ListingDetailsScreen from './ListingDetailsScreen';
 // import ListingEditScreen from './ListingEditScreen';
 // import ListingsScreen from './ListingsScreen';
 // import LoginScreen from './LoginScreen';
@@ -182,13 +183,13 @@ export default function TabFiveScreen() {
       {/* <AppListItemSeparator /> */}
       {/* <Text style={styles.title}>component Screens</Text> */}
       {/* <AccountScreen /> */}
-      {/* <ListingDetailsScreen /> */}
+      <ListingDetailsScreen />
       {/* <ListingEditScreen /> */}
       {/* <ListingsScreen /> */}
       {/* <LoginScreen /> */}
       {/* <MessagesScreen /> */}
       {/* <RegisterScreen /> */}
-      <ViewImgageScreen />
+      {/* <ViewImgageScreen /> */}
       {/* <WelcomeScreen /> */}
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
     </View>
@@ -200,6 +201,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    // width: "100%",
   },
   title: {
     fontSize: 20,

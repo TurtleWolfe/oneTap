@@ -49,6 +49,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
         <AppButton
           title="Register"
           color="secondary"
+          textColor="darkGrey"
           // color={defaultStyles.colors.primary}
           onPress={() =>
             // navigation.navigate("Register")

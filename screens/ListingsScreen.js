@@ -3,7 +3,7 @@ import { FlatList, StyleSheet } from "react-native";
 
 import ActivityIndicator from "../components/ActivityIndicator";
 import Button from "../components/AppButton";
-import Card from "../components/Card";
+import Card from "../components/AppCard";
 import colors from "../config/colors";
 import listingsApi from "../api/listings";
 import routes from "../navigation/routes";

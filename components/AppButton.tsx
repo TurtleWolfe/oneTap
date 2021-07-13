@@ -19,6 +19,7 @@ import defaultStyles from "../config/styles";
 interface AppButtonProps {
   // color?: keyof typeof defaultStyles;
   color?: string;
+  textColor?: string;
   title?: string;
   // onPress?: () => void;
   onPress?: (event: GestureResponderEvent) => void;
@@ -26,17 +27,22 @@ interface AppButtonProps {
 
 const AppButton: React.FC<AppButtonProps> = ({
   color = 'primary',
+  textColor = 'lightGrey',
   title = 'default App Button',
   onPress = () => console.log('default AppButton'),
 }) => {
   return (
     // <View style={styles.container}>
     <TouchableOpacity
-      style={[styles.button, { backgroundColor: defaultStyles.colors[color] }]}
+      style={[styles.button, {
+        backgroundColor: defaultStyles.colors[color]
+      }]}
       onPress={onPress}
     >
       <Text
-        style={styles.text}>
+        style={[styles.text, {
+          color: defaultStyles.colors[textColor]
+        }]}>
         {title}
       </Text>
     </TouchableOpacity>
@@ -59,11 +65,12 @@ const styles = StyleSheet.create({
   },
   text: {
     color: defaultStyles.colors.lightGrey,
-    fontSize: 18,
+    fontSize: 20,
     // textTransform: "uppercase",
     // fontWeight: "bold",
     fontWeight: "900",
     fontFamily: "CharterBoldItalic",
+    // fontFamily: defaultStyles.text.fontFamily,
   },
 })
 
