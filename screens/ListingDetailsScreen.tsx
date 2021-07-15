@@ -1,8 +1,11 @@
-//TurtleWolfe.com // //custom components
-//ListingDetailsScreen
-//ListingDetailsScreen // //custom components
-//ListingDetailsScreen
-//TurtleWolfe.com // //custom components
+//  Colective Minds Inc.
+//  TurtleWolfe.com // //custom components
+//  ListingDetailsScreen
+//  ListingDetailsScreen // //custom components
+//  ListingDetailsScreen
+//  TurtleWolfe.com // //custom components
+//  Colective Minds Inc.
+
 import React from 'react'
 import {
   Image,

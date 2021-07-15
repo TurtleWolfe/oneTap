@@ -23,6 +23,7 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 interface AppCardProps {
   title?: string;
   subTitle?: string;
+  image?: string;
   // image?: ImageURISource;
   // image?: (id: string)=> void;
   imageUrl?: string;
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
   image: {
     // backgroundColor: 'yellow',
     backgroundColor: defaultStyles.colors.secondary,
-    height: 200,
+    height: 370,
     width: "100%",
     // width: 100,
     // flex: 1,
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     fontWeight: "900",
   },
   subTitle: {
-    color: defaultStyles.colors.secondary,
+    color: defaultStyles.colors.darkGrey,
     fontFamily: "CharterItalic",
     // fontFamily: "MonoSpace",
     fontWeight: "900",

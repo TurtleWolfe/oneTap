@@ -12,7 +12,7 @@ import AppButton from '../components/AppButton';
 import AppCard from '../components/AppCard';
 // import AppCategoryPickerItem from '../components/AppCategoryPickerItem';
 // import AppIcon from '../components/AppIcon';
-import AppIcon from '../components/Icon';
+import AppIcon from '../components/AppIcon';
 // import AppImageInput from '../components/AppImageInput';
 // import AppImageInputList from '../components/AppImageInputList';
 // import AppPicker from '../components/AppPicker';
@@ -41,7 +41,7 @@ import ListingDetailsScreen from './ListingDetailsScreen';
 // import ListingEditScreen from './ListingEditScreen';
 // import ListingsScreen from './ListingsScreen';
 // import LoginScreen from './LoginScreen';
-// import MessagesScreen from './MessagesScreen';
+import MessagesScreen from './MessagesScreen';
 // import RegisterScreen from './RegisterScreen';
 // import ViewImgageScreen from './ViewImageScreen';
 import ViewImgageScreen from './ViewImageScreen';
@@ -183,11 +183,11 @@ export default function TabFiveScreen() {
       {/* <AppListItemSeparator /> */}
       {/* <Text style={styles.title}>component Screens</Text> */}
       {/* <AccountScreen /> */}
-      <ListingDetailsScreen />
+      {/* <ListingDetailsScreen /> */}
       {/* <ListingEditScreen /> */}
       {/* <ListingsScreen /> */}
       {/* <LoginScreen /> */}
-      {/* <MessagesScreen /> */}
+      <MessagesScreen />
       {/* <RegisterScreen /> */}
       {/* <ViewImgageScreen /> */}
       {/* <WelcomeScreen /> */}
@@ -203,6 +203,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // width: "100%",
   },
+  // appListItem: {
+  //   // paddingLeft: 0,
+  //   // width: 100,
+  //   alignItems: 'center',
+  //   backgroundColor: Palette.danger,
+  //   borderRadius: 25,
+  //   height: 100,
+  //   justifyContent: 'center',
+  //   padding: 7,
+  // },
+  // applistImage: {
+  //   backgroundColor: Palette.highlighter,
+  //   borderRadius: 25,
+  //   height: 50,
+  //   marginLeft: 10,
+  //   // margin: 20,
+  //   width: 50,
+  // },
   title: {
     fontSize: 20,
     fontWeight: 'bold',

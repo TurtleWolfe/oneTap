@@ -21,8 +21,8 @@ interface AppButtonProps {
   color?: string;
   textColor?: string;
   title?: string;
-  // onPress?: () => void;
-  onPress?: (event: GestureResponderEvent) => void;
+  onPress?: any;
+  // onPress?: (event: GestureResponderEvent) => void;
 }
 
 const AppButton: React.FC<AppButtonProps> = ({
