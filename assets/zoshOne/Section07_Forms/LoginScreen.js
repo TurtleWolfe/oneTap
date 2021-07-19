@@ -1,16 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Image } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
-import {
-  ErrorMessage,
-  Form,
-  FormField,
-  SubmitButton,
-} from "../components/forms";
-import authApi from "../api/auth";
-import useAuth from "../auth/useAuth";
+import { AppForm, AppFormField, SubmitButton } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -18,30 +11,16 @@ const validationSchema = Yup.object().shape({
 });
 
 function LoginScreen(props) {
-  const auth = useAuth();
-  const [loginFailed, setLoginFailed] = useState(false);
-
-  const handleSubmit = async ({ email, password }) => {
-    const result = await authApi.login(email, password);
-    if (!result.ok) return setLoginFailed(true);
-    setLoginFailed(false);
-    auth.logIn(result.data);
-  };
-
   return (
     <Screen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
 
-      <Form
+      <AppForm
         initialValues={{ email: "", password: "" }}
-        onSubmit={handleSubmit}
+        onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        <ErrorMessage
-          error="Invalid email and/or password."
-          visible={loginFailed}
-        />
-        <FormField
+        <AppFormField
           autoCapitalize="none"
           autoCorrect={false}
           icon="email"
@@ -50,7 +29,7 @@ function LoginScreen(props) {
           placeholder="Email"
           textContentType="emailAddress"
         />
-        <FormField
+        <AppFormField
           autoCapitalize="none"
           autoCorrect={false}
           icon="lock"
@@ -60,7 +39,7 @@ function LoginScreen(props) {
           textContentType="password"
         />
         <SubmitButton title="Login" />
-      </Form>
+      </AppForm>
     </Screen>
   );
 }

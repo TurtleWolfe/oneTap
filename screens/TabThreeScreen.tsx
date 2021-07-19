@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
+import ListingEditScreen from '../screens/ListingEditScreen';
 import AppPicker from '../components/AppPicker';
 import AppPickerItem from '../components/AppPickerItem';
 import AppTextInput from '../components/AppTextInput';
@@ -30,7 +31,7 @@ export default function TabThreeScreen() {
   // }
   return (
     <View style={styles.container}>
-      <AppPicker
+      {/* <AppPicker
         items={categories}
         onSelectItem={(item: React.SetStateAction<undefined>) => setCategory(item)}
         selectedItem={category}
@@ -42,7 +43,8 @@ export default function TabThreeScreen() {
       <AppTextInput
         icon='email'
         placeholder='User Name'
-      />
+      /> */}
+      <ListingEditScreen />
     </View>
   );
 }

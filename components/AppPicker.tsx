@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     // fontWeight: "bold",
     // fontWeight: '600',
     // alignItems: "center",
-    // color: defaultStyles.colors.mediumGrey,
+    color: defaultStyles.colors.mediumGrey,
     flex: 1,
     // fontSize: 20,
     // justifyContent: "center",
