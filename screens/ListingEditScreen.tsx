@@ -19,12 +19,13 @@ import {
   AppSubmitButton,
 } from "../components/forms";
 import Screen from "../components/AppScreen";
-// import AppCategoryPickerItem from "../components/AppCategoryPickerItem";
-import AppPickerItem from "../components/AppPickerItem";
+// import AppPickerItem from "../components/AppPickerItem";
+import AppCategoryPickerItem from "../components/AppCategoryPickerItem";
 import FormImagePicker from '../components/forms/FormImagePicker';
 import listingsApi from '../api/listings'
 import useLocation from '../hooks/useLocation';
 import UploadScreen from './UploadScreen';
+import defaultStyles from "../config/styles";
 
 const validationSchema = Yup.object().shape({
   title: Yup
@@ -58,16 +59,18 @@ const categories = [
   //   label: "Books",
   //   value: 8,
   // },
-  {
-    backgroundColor: "#fed330",
-    icon: "camera",
-    label: "Cameras",
-    value: 3,
-  },
+  // {
+  //   backgroundColor: "#fed330",
+  //   iconColor: defaultStyles.colors.darkGrey,
+  //   icon: "camera",
+  //   label: "Cameras",
+  //   value: 1,
+  // },
   {
     backgroundColor: "#fd9644",
-    icon: "car",
-    label: "Lipstick",
+    iconColor: defaultStyles.colors.darkGrey,
+    icon: "alpha-f-circle",
+    label: "Foundation",
     value: 2,
   },
   // {
@@ -78,9 +81,10 @@ const categories = [
   // },
   {
     backgroundColor: "#fc5c65",
-    icon: "floor-lamp",
-    label: "Foundation",
-    value: 1,
+    iconColor: defaultStyles.colors.darkGrey,
+    icon: "lipstick",
+    label: "Lipstick",
+    value: 3,
   },
   // {
   //   backgroundColor: "#26de81",
@@ -176,16 +180,17 @@ const ListingEditScreen: React.FC<ListingEditScreenProps> = ({
           name="price"
           keyboardType="numeric"
           maxLength={8} // 10 000.99
-          width={120}
+          // width={120}
+          width='45%'
           placeholder="Price"
         />
         <Picker
           items={categories}
           numberOfColumns={3}
           name="category"
-          // PickerItemComponent={AppCategoryPickerItem}
-          PickerItemComponent={AppPickerItem}
-          width='50%'
+          // PickerItemComponent={AppPickerItem}
+          PickerItemComponent={AppCategoryPickerItem}
+          width='45%'
           placeholder="Category"
         />
         <FormField

@@ -19,7 +19,9 @@ interface AppTextProps {
   children?: React.ReactNode;
   numberOfLines?: number;
   style?: {};
-  otherProps?: {};
+  otherProps?: {
+    // numberOfLines?: number;
+  }
 } // typeScript
 
 const AppText: React.FC<AppTextProps> = ({

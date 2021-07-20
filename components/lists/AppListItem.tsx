@@ -29,6 +29,8 @@ import defaultStyles from "../../config/styles";
 interface AppListItemProps {
   title?: string;
   subTitle?: string;
+  showChevron?: boolean;
+  swipeable?: boolean;
 
   // image?: string;
   image?: ImageSourcePropType;
@@ -69,6 +71,8 @@ interface AppListItemProps {
 const AppListItem: React.FC<AppListItemProps> = ({
   title,
   subTitle,
+  showChevron = true,
+  swipeable = false,
   image,
   IconComponent,
   appListImage,
@@ -79,8 +83,7 @@ const AppListItem: React.FC<AppListItemProps> = ({
   )
 }) => {
   return (
-    <Swipeable
-      renderRightActions={renderRightActions}>
+    (!swipeable) ? (//  //       if not swipeable
       <TouchableHighlight
         underlayColor={defaultStyles.colors.darkGrey}
         onPress={onPress}>
@@ -107,16 +110,54 @@ const AppListItem: React.FC<AppListItemProps> = ({
                 {subTitle}
               </AppText>}
           </View>
-          <MaterialCommunityIcons
+          {/* {showChevron && <MaterialCommunityIcons
             name={'chevron-right'}
-            color={defaultStyles.colors.danger}
+            color={defaultStyles.colors.highlighter}
             size={55}
-          />
+          />} */}
         </View>
       </TouchableHighlight>
-    </Swipeable>
+    ) : (//                     // if swipeable
+      <Swipeable
+        renderRightActions={renderRightActions}>
+        <TouchableHighlight
+          underlayColor={defaultStyles.colors.darkGrey}
+          onPress={onPress}>
+          <View style={[styles.container, appListItem]}>
+            {IconComponent}
+            {image && //conditional rendering if image exists
+              <Image
+                style={[styles.image, appListImage]}
+                source={image}
+              />}
+            <View style={styles.detailsContainer}>
+              {title && //conditional rendering if title exists
+                <AppText
+                  style={styles.title}
+                  numberOfLines={1}
+                >
+                  {title}
+                </AppText>}
+              {subTitle &&  //conditional rendering if subTitle exists
+                <AppText
+                  style={styles.subTitle}
+                  numberOfLines={3}
+                >
+                  {subTitle}
+                </AppText>}
+            </View>
+            {showChevron && <MaterialCommunityIcons
+              name={'chevron-right'}
+              color={defaultStyles.colors.highlighter}
+              size={55}
+            />}
+          </View>
+        </TouchableHighlight>
+      </Swipeable>
+    )
   )
-} // App List Item Component
+}
+// App List Item Component
 
 const styles = StyleSheet.create({
   container: {

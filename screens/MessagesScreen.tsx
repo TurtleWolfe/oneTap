@@ -86,6 +86,7 @@ const MessagesScreen: React.FC<MessagesScreenProps> = ({
             subTitle={item.description}//description
             image={item.image}
             onPress={() => console.log("Message selected", item)}
+            swipeable={true}
             renderRightActions={() => (
               <AppDeleteAction
                 onPress={() => handleDelete(item)}

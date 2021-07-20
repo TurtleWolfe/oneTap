@@ -1,9 +1,10 @@
-
+//  Colective Minds Inc.
 //  TurtleWolfe.com // //custom components
 //  AppScreen
 //  AppScreen // //custom components
 //  AppScreen
 //  TurtleWolfe.com // //custom components
+//  Colective Minds Inc.
 
 import React from 'react'
 // import Constants from "expo-constants";
