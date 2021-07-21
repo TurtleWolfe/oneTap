@@ -13,7 +13,7 @@ import {
   TouchableOpacity,
 } from 'react-native'
 
-import AppText from "./AppText";
+import AppText from "./Text";
 
 interface AppPickerItemProps {
   item?: {

@@ -14,8 +14,8 @@ import {
   // Text,
   View,
 } from 'react-native'
-import AppIcon from './AppIcon'
-import AppText from './AppText'
+import AppIcon from './Icon'
+import AppText from './Text'
 
 import defaultStyles from "../config/styles";
 

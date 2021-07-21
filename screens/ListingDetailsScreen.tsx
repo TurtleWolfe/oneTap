@@ -15,7 +15,7 @@ import {
   // Text,
   View,
 } from 'react-native'
-import AppText from "../components/AppText";
+import AppText from "../components/Text";
 import ContactSellerForm from '../components/ContactSellerForm';
 import AppListItem from "../components/lists/AppListItem";
 import defaultStyles from '../config/styles';

@@ -18,9 +18,9 @@ import {
   AppFormPicker as Picker,
   AppSubmitButton,
 } from "../components/forms";
-import Screen from "../components/AppScreen";
+import Screen from "../components/Screen";
 // import AppPickerItem from "../components/AppPickerItem";
-import AppCategoryPickerItem from "../components/AppCategoryPickerItem";
+import AppCategoryPickerItem from "../components/CategoryPickerItem";
 import FormImagePicker from '../components/forms/FormImagePicker';
 import listingsApi from '../api/listings'
 import useLocation from '../hooks/useLocation';

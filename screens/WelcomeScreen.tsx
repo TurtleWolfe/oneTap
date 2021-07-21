@@ -14,7 +14,7 @@ import {
   Text,
   View,
 } from 'react-native'
-import AppButton from "../components/AppButton";
+import AppButton from "../components/Button";
 
 import defaultStyles from '../config/styles';
 

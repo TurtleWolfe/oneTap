@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import ListingEditScreen from '../screens/ListingEditScreen';
-import AppPicker from '../components/AppPicker';
-import AppPickerItem from '../components/AppPickerItem';
-import AppTextInput from '../components/AppTextInput';
+import AppPicker from '../components/Picker';
+import AppPickerItem from '../components/PickerItem';
+import AppTextInput from '../components/TextInput';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import {

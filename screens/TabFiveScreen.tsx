@@ -8,17 +8,17 @@ import {
 } from '../components/Themed';
 
 //  App components
-import AppButton from '../components/AppButton';
-import AppCard from '../components/AppCard';
+import AppButton from '../components/Button';
+import AppCard from '../components/Card';
 // import AppCategoryPickerItem from '../components/AppCategoryPickerItem';
 // import AppIcon from '../components/AppIcon';
-import AppIcon from '../components/AppIcon';
+import AppIcon from '../components/Icon';
 // import AppImageInput from '../components/AppImageInput';
 // import AppImageInputList from '../components/AppImageInputList';
 // import AppPicker from '../components/AppPicker';
 // import AppPickerItem from '../components/AppPickerItem';
 // import AppScreen from '../components/AppScreen';
-import AppText from '../components/AppText';
+import AppText from '../components/Text';
 // import AppTextInput from '../components/AppTextInput';
 // import AppUseLocation from '../components/AppUseLocation';
 

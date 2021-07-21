@@ -9,8 +9,8 @@
 import React from 'react'
 import { useFormikContext } from "formik";
 
-import AppTextInput from "../AppTextInput";
-import ErrorMessage from "./AppErrorMessage";
+import TextInput from "../TextInput";
+import ErrorMessage from "./ErrorMessage";
 
 interface AppFormFieldProps {
   name?: string;
@@ -47,7 +47,7 @@ const AppFormField: React.FC<AppFormFieldProps> = ({
 
   return (
     <>
-      <AppTextInput
+      <TextInput
         onBlur={() => setFieldTouched(name)}
         onChangeText={text => setFieldValue(name, text)}
         value={values[name]}

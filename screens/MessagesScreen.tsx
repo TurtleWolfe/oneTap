@@ -13,7 +13,7 @@ import {
   // Text, text moved to AppListItem in FlatList
 } from 'react-native'
 
-import AppScreen from "../components/AppScreen";
+import AppScreen from "../components/Screen";
 import AppListItem from "../components/lists/AppListItem";
 import AppSeparator from "../components/lists/AppListItemSeparator";
 import AppDeleteAction from "../components/lists/AppListItemDeleteAction";

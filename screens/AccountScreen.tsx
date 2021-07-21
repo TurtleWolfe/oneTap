@@ -16,8 +16,8 @@ import {
 // import authStorage from '../../auth/storage';
 // import useAuth from '../auth/useAuth';
 
-import AppIcon from "../components/AppIcon";
-import AppScreen from "../components/AppScreen";
+import AppIcon from "../components/Icon";
+import AppScreen from "../components/Screen";
 import AppListItem from "../components/lists/AppListItem";
 import ListItemSeparator from "../components/lists/AppListItemSeparator";
 import defaultStyles from "../config/styles";

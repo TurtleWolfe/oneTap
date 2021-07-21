@@ -6,8 +6,8 @@
 //  TurtleWolfe.com // //custom components
 //  Colective Minds Inc.
 
-export { default as AppForm } from "./AppForm";
-export { default as AppFormField } from "./AppFormField";
-export { default as AppFormPicker } from "./AppFormPicker";
-export { default as AppErrorMessage } from "./AppErrorMessage";
-export { default as AppSubmitButton } from "./AppSubmitButton";
+export { default as AppForm } from "./Form";
+export { default as AppFormField } from "./FormField";
+export { default as AppFormPicker } from "./FormPicker";
+export { default as AppErrorMessage } from "./ErrorMessage";
+export { default as AppSubmitButton } from "./SubmitButton";

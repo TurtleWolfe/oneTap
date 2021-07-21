@@ -17,10 +17,10 @@ import {
 
 // import AppActivityIndicator from '../components/AppActivityIndicator';
 import AppActivityIndicator from '../components/ActivityIndicator';
-import AppButton from '../components/AppButton';
-import AppCard from "../components/AppCard";
-import AppScreen from "../components/AppScreen";
-import AppText from '../components/AppText';
+import AppButton from '../components/Button';
+import AppCard from "../components/Card";
+import AppScreen from "../components/Screen";
+import AppText from '../components/Text';
 import defaultStyles from '../config/styles';
 // import listingsApi from '../api/listings'
 // import routes from '../navigation/routes'

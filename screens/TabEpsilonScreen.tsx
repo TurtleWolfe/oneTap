@@ -6,26 +6,26 @@ import { Button, Image, Platform, StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 //  App components
-import AppButton from '../components/AppButton';
-import AppCard from '../components/AppCard';
-import AppCategoryPickerItem from '../components/AppCategoryPickerItem';
-import AppIcon from '../components/AppIcon';
+import AppButton from '../components/Button';
+import AppCard from '../components/Card';
+import AppCategoryPickerItem from '../components/CategoryPickerItem';
+import AppIcon from '../components/Icon';
 import AppImageInput from '../components/AppImageInput';
 import AppImageInputList from '../components/AppImageInputList';
-import AppPicker from '../components/AppPicker';
-import AppPickerItem from '../components/AppPickerItem';
-import AppScreen from '../components/AppScreen';
-import AppText from '../components/AppText';
-import AppTextInput from '../components/AppTextInput';
+import AppPicker from '../components/Picker';
+import AppPickerItem from '../components/PickerItem';
+import AppScreen from '../components/Screen';
+import AppText from '../components/Text';
+import AppTextInput from '../components/TextInput';
 import AppUseLocation from '../components/AppUseLocation';
 
 //  App form Components
-import AppErrorMessage from '../components/forms/AppErrorMessage';
-import AppForm from '../components/forms/AppForm';
-import AppFormField from '../components/forms/AppFormField';
-import AppFormPicker from '../components/forms/AppFormPicker';
+import AppErrorMessage from '../components/forms/ErrorMessage';
+import AppForm from '../components/forms/Form';
+import AppFormField from '../components/forms/FormField';
+import AppFormPicker from '../components/forms/FormPicker';
 import FormImagePicker from '../components/forms/FormImagePicker';
-import AppSubmitButton from '../components/forms/AppSubmitButton';
+import AppSubmitButton from '../components/forms/SubmitButton';
 
 //  App lists Components
 import AppListItem from '../components/lists/AppListItem';

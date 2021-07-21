@@ -13,7 +13,7 @@ import {
 } from 'react-native'
 import * as Yup from "yup";
 import jwtDecode from 'jwt-decode';
-import Screen from "../components/AppScreen";
+import Screen from "../components/Screen";
 import {
   AppErrorMessage,
   AppForm,
