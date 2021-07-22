@@ -1,22 +1,27 @@
-//TurtleWolfe.com // //custom components
-//AppImageInputList
-//AppImageInputList // //custom components
-//AppImageInputList
-//TurtleWolfe.com // //custom components
+//  Colective Minds Inc.
+//  TurtleWolfe.com // //custom components
+//  AppImageInputList
+//  AppImageInputList // //custom components
+//  AppImageInputList
+//  TurtleWolfe.com // //custom components
+//  Colective Minds Inc.
+
 import React, { useRef } from 'react'
 import {
   ScrollView,
   StyleSheet,
-  Text,
   View,
 } from 'react-native'
 import AppImageInput from './ImageInput'
 
 interface AppImageInputListProps {
   // imageUris?: [];
-  imageUris?: any;
+  // imageUris?: any;
+  imageUris?: string[];
   onRemoveImage?: any;
+  // onRemoveImage?: (imageUri: string) => void;
   onAddImage?: any;
+  // onAddImage?: (imageUri: string) => void;
 } // typeScript
 
 const AppImageInputList: React.FC<AppImageInputListProps> = ({
@@ -31,7 +36,7 @@ const AppImageInputList: React.FC<AppImageInputListProps> = ({
       <ScrollView
         // style={{ backgroundColor: 'yellow' }}
         ref={scrollView}
-        horizontal
+        horizontal  //  true
         onContentSizeChange={() => scrollView.current.scrollToEnd()}
       >
         <View style={styles.container}>
@@ -61,7 +66,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   containerToo: {
-    width: 400,
+    // width: 400,
+    // width: '59%',
     height: 100,
     // backgroundColor: 'yellow',
   },

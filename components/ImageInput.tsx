@@ -1,35 +1,41 @@
-//TurtleWolfe.com // //custom components
-//AppImageInput
-//AppImageInput // //custom components
-//AppImageInput
-//TurtleWolfe.com // //custom components
+//  Colective Minds Inc.
+//  TurtleWolfe.com // //custom components
+//  AppImageInput
+//  AppImageInput // //custom components
+//  AppImageInput
+//  TurtleWolfe.com // //custom components
+//  Colective Minds Inc.
+
 import React, {
   useEffect,
-  // useState 
+  useState
 } from 'react'
+
 import {
   Alert,
   Image,
   Platform,
   StyleSheet,
-  Text,
   TouchableWithoutFeedback,
   View,
 } from 'react-native'
+
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as ImagePicker from "expo-image-picker";
-
 import defaultStyles from "../config/styles";
+
 interface AppImageInputProps {
-  imageUri?: any;
+  // imageUri?: any;
+  imageUri?: string;
   onChangeImage?: any;
+  // onChangeImage?: (imageUri: string) => void;
 } // typeScript
 
 const AppImageInput: React.FC<AppImageInputProps> = ({
   imageUri,
   onChangeImage,
 }) => {
-  // const [image, setImage] = useState(null);
+  const [image, setImage] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -40,23 +46,28 @@ const AppImageInput: React.FC<AppImageInputProps> = ({
         }
       }
     })();
-  }, []);
+  }, []); // useEffect to request permissions
 
   const handlePress = () => {
     if (!imageUri) pickImage()
-    else Alert.alert('Delete', 'Are you sure you want to delete this Image?', [{ text: 'Yes', onPress: () => onChangeImage(null) },
-    { text: 'No' }])
-  }
+    else Alert.alert(
+      'Delete',
+      'Are you sure you want to delete this Image?',
+      [
+        { text: 'Yes', onPress: () => onChangeImage(null) },
+        { text: 'No' }
+      ])  // third argument is an array of buttons
+  } // handlePress to delete image
 
-  const pickImage = async () => {
+  const pickImage = async () => { // pickImage (selectImage? from camera roll)
     try {
       let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
+        // allowsMultipleSelection: true,        
         aspect: [4, 3],
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
         quality: 0.5,
       });
-
       console.log(result);
 
       if (!result.cancelled) {
@@ -67,7 +78,7 @@ const AppImageInput: React.FC<AppImageInputProps> = ({
 
     }
 
-  };
+  };  // pickImage // pickImage (selectImage? from camera roll)
 
   return (
     <TouchableWithoutFeedback
@@ -76,7 +87,7 @@ const AppImageInput: React.FC<AppImageInputProps> = ({
       <View style={styles.container}>
 
         {!imageUri && <MaterialCommunityIcons
-          color={defaultStyles.colors.mediumGrey}
+          color={defaultStyles.colors.darkGrey}
           name='camera'
           size={40}
         />}
@@ -86,15 +97,11 @@ const AppImageInput: React.FC<AppImageInputProps> = ({
           style={styles.image}
         />}
 
-
-        {/* <Text style={styles.textContainer}>
-        {children}
-      </Text> */}
       </View>
     </TouchableWithoutFeedback>
 
   )
-} // AppImageInput component
+} // App Image Input component
 
 const styles = StyleSheet.create({
   container: {
@@ -109,9 +116,6 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
-  },
-  textContainer: {
-    backgroundColor: 'yellow',
   },
 }) // style sheet for AppImageInput
 

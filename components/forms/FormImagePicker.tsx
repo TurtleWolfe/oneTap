@@ -29,7 +29,7 @@ const FormImagePicker: React.FC<FormImagePickerProps> = ({
   const handleRemove = (uri: any) => {
     setFieldValue(
       name,
-      imageUris.filter(imageUri => imageUri !== uri)
+      imageUris.filter((imageUri) => imageUri !== uri)
     )
   }
 

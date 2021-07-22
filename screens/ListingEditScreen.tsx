@@ -110,7 +110,7 @@ const categories = [
   //   label: "Sports",
   //   value: 6,
   // },
-];
+];  // categories (will move to server)
 
 interface ListingEditScreenProps {
   // location?: {coords?:{}}
