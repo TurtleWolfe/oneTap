@@ -33,7 +33,19 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      tabBarOptions={{
+        // activeTintColor: Colors[colorScheme].tint,
+        activeTintColor: defaultStyles.colors.highlighter,
+        activeBackgroundColor: defaultStyles.colors.primary,
+        inactiveTintColor: Colors[colorScheme].tint,
+        inactiveBackgroundColor: defaultStyles.colors.secondary,
+        // thees are passed to the tabBarIcons and destructured as color
+        // looking for a way to pass size to make active tab icon bigger
+        labelStyle: {
+          fontSize: 13,
+          fontFamily: 'CharterBold',
+        }
+      }}>
       <BottomTab.Screen
         name="Home"
         component={TabOneNavigator}
@@ -93,7 +105,7 @@ function TabOneNavigator() {
         options={{
           headerTitle: props => <FancyLogo {...props} />,
           headerStyle: {
-            backgroundColor: defaultStyles.colors.secondary,
+            backgroundColor: defaultStyles.colors.primary,
           },
         }}
       />
@@ -113,7 +125,7 @@ function TabTwoNavigator() {
         options={{
           headerTitle: props => <FancyLogo {...props} />,
           headerStyle: {
-            backgroundColor: defaultStyles.colors.secondary,
+            backgroundColor: defaultStyles.colors.primary,
           },
         }}
       />
@@ -133,7 +145,7 @@ function TabThreeNavigator() {
         options={{
           headerTitle: props => <FancyLogo {...props} />,
           headerStyle: {
-            backgroundColor: defaultStyles.colors.secondary,
+            backgroundColor: defaultStyles.colors.primary,
           },
         }}
       />
@@ -153,7 +165,7 @@ function TabFourNavigator() {
         options={{
           headerTitle: props => <FancyLogo {...props} />,
           headerStyle: {
-            backgroundColor: defaultStyles.colors.secondary,
+            backgroundColor: defaultStyles.colors.primary,
           },
         }}
       />
@@ -173,7 +185,7 @@ function TabFiveNavigator() {
         options={{
           headerTitle: props => <FancyLogo {...props} />,
           headerStyle: {
-            backgroundColor: defaultStyles.colors.secondary,
+            backgroundColor: defaultStyles.colors.primary,
           },
         }}
       />

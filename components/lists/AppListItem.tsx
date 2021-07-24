@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     flexDirection: "row",
-    backgroundColor: defaultStyles.colors.secondary,
+    backgroundColor: defaultStyles.colors.translucent,
     // paddingLeft: 10,
     padding: 15,
     width: '100%',

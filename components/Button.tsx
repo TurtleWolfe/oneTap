@@ -27,7 +27,7 @@ interface AppButtonProps {
 
 const AppButton: React.FC<AppButtonProps> = ({
   color = 'primary',
-  textColor = 'lightGrey',
+  textColor = 'highlighter',
   title = 'default App Button',
   onPress = () => console.log('default AppButton'),
 }) => {

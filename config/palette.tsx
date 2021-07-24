@@ -1,5 +1,7 @@
 export default {
   black: "#000",
+  translucent: 'rgba(0, 0, 0, 0.1)',
+  translucentRed: 'rgba(255, 0, 0, 0.4)',
   darkGrey: "#775E80",
   primary: "#8F3CFF",//purple
   mediumGrey: "#C597FE",

@@ -35,7 +35,7 @@ const AppListItemDeleteAction: React.FC<AppListItemDeleteActionProps> = ({
         <MaterialCommunityIcons
           name="trash-can"
           size={35}
-          color={defaultStyles.colors.white}
+          color={defaultStyles.colors.highlighter}
         />
       </View>
     </TouchableWithoutFeedback>
@@ -44,7 +44,7 @@ const AppListItemDeleteAction: React.FC<AppListItemDeleteActionProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: defaultStyles.colors.danger,
+    backgroundColor: defaultStyles.colors.translucentRed,
     width: 70,
     // width: '100%',
     justifyContent: "center",
