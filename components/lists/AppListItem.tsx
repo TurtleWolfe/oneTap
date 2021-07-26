@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     // marginVertical: 10,
   },
   subTitle: {
-    color: defaultStyles.colors.darkGrey,
+    color: defaultStyles.colors.lightGrey,
     fontFamily: 'CharterBoldItalic',
     // fontSize: 25,
     fontWeight: '900',

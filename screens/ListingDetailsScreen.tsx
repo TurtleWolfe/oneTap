@@ -19,6 +19,7 @@ import AppText from "../components/Text";
 import ContactSellerForm from '../components/ContactSellerForm';
 import AppListItem from "../components/lists/AppListItem";
 import defaultStyles from '../config/styles';
+import AppScreen from '../components/Screen';
 
 interface ListingDetailsScreenProps {
   route?: any;
@@ -27,53 +28,55 @@ interface ListingDetailsScreenProps {
 const ListingDetailsScreen: React.FC<ListingDetailsScreenProps> = ({
   route,
 }) => {
-  // const listing = route.params;
+  const listing = route.params;
 
   return (
-    <KeyboardAvoidingView
-      behavior="position"
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}
-      style={styles.keyBoard}
-    >
-      <View
-        style={styles.container}
+    <AppScreen >
+      <KeyboardAvoidingView
+        behavior="position"
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}
+        style={styles.keyBoard}
       >
-        <Image
-          style={styles.image}
-          // source={listing.image}
-          source={require("../assets/images/resources/cosmetics/eggBottle.png")}
-        />
-        <View style={styles.detailsContainer}>
-          <AppText
-            style={styles.title}>
-            Farmasi Cosmetics
-            {/* {listing.title} */}
-          </AppText>
-          <AppText
-            style={styles.price}>
-            $99
-            {/* ${listing.price} */}
-          </AppText>
-          <View style={styles.userContainer}>
-            <AppListItem
-              // image={require("../assets/mosh.jpg")}
-              image={require("../assets/images/resources/models/10bfe9408f3e45bfb4609fb75331ac6a.png")}
-              title="Janet Doe"
-              subTitle="5 Listings"
-              appListItem={
-                styles.appListItem
-              }
-              appListImage={
-                styles.applistImage
-              }
-            />
-          </View>
-          {/* <ContactSellerForm
+        <View
+          style={styles.container}
+        >
+          <Image
+            style={styles.image}
+            source={listing.image}
+          // source={require("../assets/images/resources/cosmetics/eggBottle.png")}
+          />
+          <View style={styles.detailsContainer}>
+            <AppText
+              style={styles.title}>
+              {/* Farmasi Cosmetics */}
+              {listing.title}
+            </AppText>
+            <AppText
+              style={styles.price}>
+              {/* $99 */}
+              ${listing.price}
+            </AppText>
+            <View style={styles.userContainer}>
+              <AppListItem
+                // image={require("../assets/mosh.jpg")}
+                image={require("../assets/images/resources/models/10bfe9408f3e45bfb4609fb75331ac6a.png")}
+                title="Janet Doe"
+                subTitle="5 Listings"
+                appListItem={
+                  styles.appListItem
+                }
+                appListImage={
+                  styles.applistImage
+                }
+              />
+            </View>
+            {/* <ContactSellerForm
             listing={listing}
           /> */}
+          </View>
         </View>
-      </View>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </AppScreen>
   )
 }
 
@@ -92,7 +95,7 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     padding: 20,
-    backgroundColor: defaultStyles.colors.lightGrey,
+    // backgroundColor: defaultStyles.colors.lightGrey,
   },
   userContainer: {
     borderRadius: 20,
@@ -101,7 +104,7 @@ const styles = StyleSheet.create({
     // backgroundColor: defaultStyles.colors.lightGrey,
   },
   appListItem: {
-    backgroundColor: defaultStyles.colors.lightGrey,
+    backgroundColor: defaultStyles.colors.translucent,
     marginRight: 13,
     // padding: 30,
   },
@@ -120,7 +123,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
   },
   price: {
-    color: defaultStyles.colors.secondary,
+    color: defaultStyles.colors.primary,
     fontFamily: 'CharterBoldItalic',
     fontSize: 20,
     // fontWeight: "bold",

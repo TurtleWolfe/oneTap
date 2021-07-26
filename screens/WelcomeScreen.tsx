@@ -15,7 +15,7 @@ import {
   View,
 } from 'react-native'
 import AppButton from "../components/Button";
-
+import routes from '../navigation/routes'
 import defaultStyles from '../config/styles';
 
 interface WelcomeScreenProps {
@@ -36,14 +36,16 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
           style={styles.logo}
           source={require("../assets/images/icon.png")}
         />
-        <Text style={styles.tagline}>https://Farmasi.com/</Text>
+        {/* <Text style={styles.tagline}>https://FARMASi.com/</Text> */}
+        <Text style={styles.tagline}>1Tap1Match</Text>
       </View>
       <View style={styles.buttonsContainer}>
         <AppButton
           title="Login"
           onPress={() =>
             // navigation.navigate("Login")
-            console.log('tapped Login Button')
+            navigation.navigate(routes.LOGIN)
+            // console.log('tapped Login Button')
           }
         />
         <AppButton
@@ -53,7 +55,8 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
           // color={defaultStyles.colors.primary}
           onPress={() =>
             // navigation.navigate("Register")
-            console.log('tapped Register Button')
+            navigation.navigate(routes.REGISTER)
+            // console.log('tapped Register Button')
           }
         />
       </View>
@@ -75,8 +78,8 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   logo: {
-    height: 100,
-    width: 100,
+    height: 300,
+    width: 300,
   },
   logoContainer: {
     alignItems: "center",
@@ -87,7 +90,7 @@ const styles = StyleSheet.create({
     color: defaultStyles.colors.primary,
     // color: 'dodgerblue',
     fontFamily: 'CharterBoldItalic',
-    fontSize: 25,
+    fontSize: 35,
     fontWeight: "900",
     paddingVertical: 20,
   },

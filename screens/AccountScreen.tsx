@@ -32,7 +32,8 @@ const menuItems = [
       name: "format-list-bulleted",
       backgroundColor: defaultStyles.colors.primary,
     },
-    targetScreen: "my Listings",
+    // targetScreen: "my Listings",
+    targetScreen: 'Messages',
     title: "My Listings",
   },
   {
@@ -82,8 +83,8 @@ const AccountScreen: React.FC<AccountScreenProps> = ({
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
-              // onPress={() => navigation.navigate(item.targetScreen)}
-              onPress={() => console.log(item.targetScreen)}
+              onPress={() => navigation.navigate(item.targetScreen)}
+            // onPress={() => console.log(item.targetScreen)}
             />
           )}
         />

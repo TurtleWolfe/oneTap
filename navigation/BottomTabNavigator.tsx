@@ -25,6 +25,10 @@ import {
   TabFiveParamList,
 } from '../types';
 import defaultStyles from '../config/styles';
+import FeedNavigator from './FeedNavigator';
+import AccountNavigator from './AccountNavigator';
+import NewListingButton from './NewListingButton';
+import routes from './routes';
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
@@ -63,9 +67,17 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Uploads"
         component={TabThreeNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="camera-sharp" color={color} />,
-        }}
+        options={({ navigation, route }) => ({
+          // tabBarButton: () => <NewListingButton
+          //   // onPress={() => navigation.navigate('Uploads')}
+          //   onPress={() => navigation.navigate(routes.UPLOADS)}
+          // // onPress={() => navigation.navigate(routes.LISTING_EDIT)}
+          // />,
+
+          tabBarIcon: ({ color }) => <TabBarIcon
+            name="camera-sharp"
+            color={color} />,
+        })}
       />
       <BottomTab.Screen
         name="Profile"
@@ -88,7 +100,11 @@ export default function BottomTabNavigator() {
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
 function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+  return <Ionicons
+    size={30}
+    style={{ marginBottom: -3 }}
+    {...props}
+  />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
@@ -111,7 +127,7 @@ function TabOneNavigator() {
       />
     </TabOneStack.Navigator>
   );
-}
+} // Home
 
 const TabTwoStack = createStackNavigator<TabTwoParamList>();
 
@@ -120,7 +136,8 @@ function TabTwoNavigator() {
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
         name="TabTwoScreen"
-        component={TabTwoScreen}
+        // name="Feed"
+        component={FeedNavigator}
         // options={{ headerTitle: 'Tab Two Title' }}
         options={{
           headerTitle: props => <FancyLogo {...props} />,
@@ -131,7 +148,7 @@ function TabTwoNavigator() {
       />
     </TabTwoStack.Navigator>
   );
-}
+} // Cart
 
 const TabThreeStack = createStackNavigator<TabThreeParamList>();
 
@@ -151,7 +168,7 @@ function TabThreeNavigator() {
       />
     </TabThreeStack.Navigator>
   );
-}
+} // Uploads
 
 const TabFourStack = createStackNavigator<TabFourParamList>();
 
@@ -160,7 +177,7 @@ function TabFourNavigator() {
     <TabFourStack.Navigator>
       <TabFourStack.Screen
         name="TabFourScreen"
-        component={TabFourScreen}
+        component={AccountNavigator}
         // options={{ headerTitle: 'Tab Four Title' }}
         options={{
           headerTitle: props => <FancyLogo {...props} />,
@@ -171,7 +188,7 @@ function TabFourNavigator() {
       />
     </TabFourStack.Navigator>
   );
-}
+} // Profile
 
 const TabFiveStack = createStackNavigator<TabFiveParamList>();
 
@@ -191,4 +208,4 @@ function TabFiveNavigator() {
       />
     </TabFiveStack.Navigator>
   );
-}
+} // Settings

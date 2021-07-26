@@ -23,7 +23,7 @@ import AppScreen from "../components/Screen";
 import AppText from '../components/Text';
 import defaultStyles from '../config/styles';
 // import listingsApi from '../api/listings'
-// import routes from '../navigation/routes'
+import routes from '../navigation/routes'
 // import useApi from '../hooks/useApi';
 
 const listings = [
@@ -95,8 +95,9 @@ const ListingsScreen: React.FC<ListingsScreenProps> = ({
               subTitle={"$" + item.price}
               // imageUrl={item.images[0].url}
               imageUrl={item.image}
-              // onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
-              onPress={() => console.log(item)}
+              onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+            // onPress={() => navigation.navigate("ListingDetails", item)}
+            // onPress={() => console.log(item)}
             />
           )}
         />
@@ -107,12 +108,12 @@ const ListingsScreen: React.FC<ListingsScreenProps> = ({
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 7,
+    // padding: 1,
     // backgroundColor: defaultStyles.colors.lightGrey,
   },
   flist: {
     padding: 3,
-    backgroundColor: defaultStyles.colors.lightGrey,
+    // backgroundColor: defaultStyles.colors.lightGrey,
     overflow: "hidden",
   },
 })

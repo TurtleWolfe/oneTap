@@ -1,28 +1,30 @@
-//TurtleWolfe.com // //custom components
-//RegisterScreen
-//RegisterScreen // //custom components
-//RegisterScreen
-//TurtleWolfe.com // //custom components
+//  TurtleWolfe.com // //custom components
+//  RegisterScreen
+//  RegisterScreen // //custom components
+//  RegisterScreen
+//  TurtleWolfe.com // //custom components
 import React, { useState } from 'react'
 import {
   StyleSheet,
 } from 'react-native'
 import * as Yup from "yup";
 
-import Screen from "../../components/AppScreen";
-import usersApi from "../../api/users";
-import authApi from "../../api/auth";
-import useAuth from '../../auth/useAuth';
+// import Screen from "../components/AppScreen";
+import Screen from "../components/Screen";
+import usersApi from "../api/users";
+import authApi from "../api/auth";
+import useAuth from '../auth/useAuth';
 
 
 import {
   AppForm as Form,
   AppFormField as FormField,
   AppSubmitButton,
-} from "../../components/forms";
-import useApi from "../../hooks/useApi";
-import ActivityIndicator from "../../components/AppActivityIndicator";
-import AppActivityIndicator from '../../components/AppActivityIndicator';
+} from "../components/forms";
+import useApi from "../hooks/useApi";
+// import ActivityIndicator from "../components/AppActivityIndicator";
+// import AppActivityIndicator from '../components/AppActivityIndicator';
+import ActivityIndicator from "../components/ActivityIndicator";
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label("Name"),
   email: Yup.string().required().email().label("Email"),

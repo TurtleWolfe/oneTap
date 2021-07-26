@@ -13,12 +13,13 @@ import {
   // ImageSourcePropType,
   // ImageURISource,
   StyleSheet,
+  TouchableWithoutFeedback,
   View,
 } from 'react-native'
 
 import AppText from "./Text";
 import defaultStyles from "../config/styles";
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+// import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 interface AppCardProps {
   title?: string;
@@ -70,34 +71,38 @@ const styles = StyleSheet.create({
     // backgroundColor: defaultStyles.colors.primary,
     borderRadius: 15,
     marginBottom: 20,
+    alignSelf: 'center',
     overflow: "hidden",
-    width: "100%",
+    width: "95%",
     // width: 100,
     // flex: 1,
   },
   image: {
     // backgroundColor: 'yellow',
-    backgroundColor: defaultStyles.colors.secondary,
+    // backgroundColor: defaultStyles.colors.secondary,
     height: 370,
     width: "100%",
     // width: 100,
     // flex: 1,
   },
   detailsContainer: {
-    // backgroundColor: defaultStyles.colors.lightGrey,
+    borderRadius: 15,
+    overflow: "hidden",
+    backgroundColor: defaultStyles.colors.translucent,
     padding: 20,
   },
   title: {
-    marginBottom: 7,
+    color: defaultStyles.colors.highlighter,
     fontFamily: "CharterBoldItalic",
     fontWeight: "900",
+    marginBottom: 7,
   },
   subTitle: {
-    color: defaultStyles.colors.darkGrey,
-    fontFamily: "CharterItalic",
     // fontFamily: "MonoSpace",
-    fontWeight: "900",
+    color: defaultStyles.colors.secondary,
+    fontFamily: "CharterItalic",
     fontSize: 20,
+    fontWeight: "900",
   },
 })
 

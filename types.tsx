@@ -4,8 +4,15 @@
  */
 
 export type RootStackParamList = {
+  Auth: undefined;
   Root: undefined;
   NotFound: undefined;
+};
+
+export type AuthParamList = {
+  Welcom: undefined;
+  Register: undefined;
+  Login: undefined;
 };
 
 export type BottomTabParamList = {
@@ -27,6 +34,7 @@ export type TabOneParamList = {
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
+  Feed: undefined;
 };
 
 export type TabThreeParamList = {
