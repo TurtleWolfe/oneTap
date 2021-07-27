@@ -44,8 +44,8 @@ const AppCard: React.FC<AppCardProps> = ({
       <View style={styles.card}>
         <Image
           style={styles.image}
-          // source={{ uri: imageUrl }}
-          source={imageUrl}
+          source={{ uri: imageUrl }}
+        // source={imageUrl}
         />
         <View style={styles.detailsContainer}>
           <AppText

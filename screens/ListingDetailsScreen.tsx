@@ -42,7 +42,8 @@ const ListingDetailsScreen: React.FC<ListingDetailsScreenProps> = ({
         >
           <Image
             style={styles.image}
-            source={listing.image}
+            // source={listing.image}
+            source={{ uri: listing.images[0].url }}
           // source={require("../assets/images/resources/cosmetics/eggBottle.png")}
           />
           <View style={styles.detailsContainer}>

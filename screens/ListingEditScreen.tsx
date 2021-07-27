@@ -120,7 +120,7 @@ const ListingEditScreen: React.FC<ListingEditScreenProps> = ({
 
 }) => {
   const location = useLocation();
-  const [uplaodVisisble, setuplaodVisisble] = useState(false);
+  const [uplaodVisisble, setUplaodVisisble] = useState(false);
   const [progress, setProgress] = useState(0);
 
   const handleSubmit = async (
@@ -134,17 +134,19 @@ const ListingEditScreen: React.FC<ListingEditScreenProps> = ({
     },
     { resetForm }: any) => {
     setProgress(0);
-    setuplaodVisisble(true);
+    setUplaodVisisble(true);
     const result = await listingsApi.addListing(
       { ...listing, location },
+      // (progress) => console.log(progress)
       (progress) => setProgress(progress)
     );
-    // setuplaodVisisble(false);
+    // setUplaodVisisble(false);
 
     if (!result.ok) {
-      setuplaodVisisble(false);
+      setUplaodVisisble(false);
       return alert('Could not save the listing');
     }
+
     // alert('Success');
     resetForm();
   }
@@ -152,7 +154,7 @@ const ListingEditScreen: React.FC<ListingEditScreenProps> = ({
   return (
     <Screen style={styles.container}>
       <UploadScreen
-        onDone={() => setuplaodVisisble(false)}
+        onDone={() => setUplaodVisisble(false)}
         progress={progress}
         visible={uplaodVisisble}
       />
