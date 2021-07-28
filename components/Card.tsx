@@ -8,7 +8,7 @@
 
 import React from 'react'
 import {
-  Image,
+  // Image,
   // ImageRequireSource,
   // ImageSourcePropType,
   // ImageURISource,
@@ -16,7 +16,8 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native'
-
+import { Image } from "react-native-expo-image-cache";
+// import FastImage from 'react-native-fast-image'
 import AppText from "./Text";
 import defaultStyles from "../config/styles";
 // import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
@@ -29,13 +30,16 @@ interface AppCardProps {
   // image?: (id: string)=> void;
   imageUrl?: string;
   onPress?: any;
-}
+  thumbnailUrl?: string;
+} // typeScript AppCardProps
 
 const AppCard: React.FC<AppCardProps> = ({
   title = 'default AppCard title  in "Charter Bold Italic',
   subTitle = 'default AppCard subTitle in "Charter Italic"',
   imageUrl = require('../assets/images/Turtlewolfe.png'),
   onPress = (console.log('press appCard')),
+  // thumbnailUrl = require('../assets/images/Turtlewolfe.png'),
+  thumbnailUrl,
 }) => {
   return (
     <TouchableWithoutFeedback
@@ -43,9 +47,12 @@ const AppCard: React.FC<AppCardProps> = ({
     >
       <View style={styles.card}>
         <Image
+          preview={{ uri: thumbnailUrl }}
+          tint='light'
           style={styles.image}
-          source={{ uri: imageUrl }}
-        // source={imageUrl}
+          // source={{ uri: imageUrl }}
+          // source={imageUrl}
+          uri={imageUrl}
         />
         <View style={styles.detailsContainer}>
           <AppText
@@ -64,7 +71,7 @@ const AppCard: React.FC<AppCardProps> = ({
       </View>
     </TouchableWithoutFeedback>
   )
-}
+} // AppCard component
 
 const styles = StyleSheet.create({
   card: {
@@ -104,6 +111,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "900",
   },
-})
+})  // styles for AppCard
 
 export default AppCard

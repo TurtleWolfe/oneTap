@@ -8,7 +8,7 @@
 
 import React from 'react'
 import {
-  Image,
+  // Image,
   KeyboardAvoidingView,
   Platform,
   StyleSheet,
@@ -20,7 +20,7 @@ import ContactSellerForm from '../components/ContactSellerForm';
 import AppListItem from "../components/lists/AppListItem";
 import defaultStyles from '../config/styles';
 import AppScreen from '../components/Screen';
-
+import { Image } from 'react-native-expo-image-cache';
 interface ListingDetailsScreenProps {
   route?: any;
 }
@@ -43,7 +43,10 @@ const ListingDetailsScreen: React.FC<ListingDetailsScreenProps> = ({
           <Image
             style={styles.image}
             // source={listing.image}
-            source={{ uri: listing.images[0].url }}
+            // source={{ uri: listing.images[0].url }}
+            uri={listing.images[0].url}
+            preview={{ uri: listing.images[0].thumbnailUrl }}
+            tint='light'
           // source={require("../assets/images/resources/cosmetics/eggBottle.png")}
           />
           <View style={styles.detailsContainer}>

@@ -92,8 +92,9 @@ const ListingsScreen: React.FC<ListingsScreenProps> = ({
               imageUrl={item.images[0].url}
               // imageUrl={item.image}
               onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
-            // onPress={() => navigation.navigate("ListingDetails", item)}
-            // onPress={() => console.log(item)}
+              // onPress={() => navigation.navigate("ListingDetails", item)}
+              // onPress={() => console.log(item)}
+              thumbnailUrl={item.images[0].thumbnailUrl}
             />
           )}
         />
