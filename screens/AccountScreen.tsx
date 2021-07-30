@@ -12,9 +12,9 @@ import {
   StyleSheet,
   View,
 } from 'react-native'
-// import AuthContext from '../../auth/context';
-// import authStorage from '../../auth/storage';
-// import useAuth from '../auth/useAuth';
+// import AuthContext from '../auth/context';
+// import authStorage from '../auth/storage';
+import useAuth from '../auth/useAuth';
 
 import AppIcon from "../components/Icon";
 import AppScreen from "../components/Screen";
@@ -49,7 +49,7 @@ const menuItems = [
 const AccountScreen: React.FC<AccountScreenProps> = ({
   navigation,
 }) => {
-  // const { user, logOut } = useAuth();
+  const { user, logOut } = useAuth();
 
   // const handleLogOut = () => {
   //   logOut();
@@ -59,10 +59,10 @@ const AccountScreen: React.FC<AccountScreenProps> = ({
     <AppScreen style={styles.screen}>
       <View style={styles.menuContainer}>
         <AppListItem
-          // title={user.name}
-          title={"Janet Doe"}
-          // subTitle={user.email}
-          subTitle={'Super@Model.com'}
+          // title={'user.name'}
+          title={user.name}
+          // subTitle={'user.email'}
+          subTitle={user.email}
           image={require("../assets/images/resources/models/2d64ead6511113e4ebd05418acf04dd9.png")}
         // appListImage={
         //   styles.applistImage
@@ -94,12 +94,13 @@ const AccountScreen: React.FC<AccountScreenProps> = ({
         IconComponent={
           <AppIcon
             name="logout"
-            backgroundColor="#ffe66d"
-          // backgroundColor={defaultStyles.colors.mediumGrey}
+            // backgroundColor="#ffe66d"
+            backgroundColor={defaultStyles.colors.highlighter}
+            iconColor={defaultStyles.colors.danger}
           />
         }
-        // onPress={() => logOut()}
-        onPress={() => console.log('log out')}
+        onPress={() => logOut()}
+      // onPress={() => console.log('log out')}
       />
     </AppScreen>
   )

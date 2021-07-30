@@ -9,7 +9,7 @@
 import React from 'react'
 import LottieView from "lottie-react-native";
 import { View, StyleSheet } from "react-native";
-
+import defaultStylles from '../config/styles'
 interface AppActivityIndicatorProps {
   visible?: boolean;
 } // typeScript
@@ -25,6 +25,7 @@ const AppActivityIndicator: React.FC<AppActivityIndicatorProps> = ({
         autoPlay
         loop
         source={require("../assets/animations/loader.json")}
+        style={styles.loader}
       />
     </View>
   );
@@ -33,12 +34,21 @@ const AppActivityIndicator: React.FC<AppActivityIndicatorProps> = ({
 const styles = StyleSheet.create({
   overlay: {
     position: "absolute",
-    backgroundColor: "white",
+    backgroundColor: "pink",
+    // backgroundColor: defaultStylles.colors.translucentRed,
     height: "100%",
-    opacity: 0.8,
+    opacity: 0.7,
     width: "100%",
     zIndex: 1,
+    // flexGrow: 1,
   },
+  loader: {
+    flexGrow: 1,
+    // alignItems: "center",
+    // justifyContent: "center",
+    alignSelf: "center",
+    width: "200%",
+  }
 }); // Styles of AppActivityIndicator
 
 export default AppActivityIndicator

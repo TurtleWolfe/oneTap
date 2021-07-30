@@ -12,7 +12,7 @@ import {
   StyleSheet,
 } from 'react-native'
 import * as Yup from "yup";
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 import Screen from "../components/Screen";
 import {
   AppErrorMessage,
@@ -21,8 +21,8 @@ import {
   AppSubmitButton
 } from "../components/forms";
 import authApi from '../api/auth'
-import AuthContext from '../auth/context';
-import authStorage from '../auth/storage';
+// import AuthContext from '../auth/context';
+// import authStorage from '../auth/storage';
 import useAuth from '../auth/useAuth';
 // const regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 // const regularExpression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/;
@@ -53,20 +53,23 @@ interface LoginScreenProps {
 const LoginScreen: React.FC<LoginScreenProps> = ({
   // alpha,
 }) => {
-  // const auth = useAuth();
+  // 
+  const auth = useAuth();
+  // sets visibility of the error message per login status
   const [loginFailed, setLoginFailed] = useState(false);
 
   const handleSubmit = async ({ email, password }: any) => {
     const result = await authApi.login(email, password)
+    // if result not ok return immidiately so the rest is not executed
     if (!result.ok) return setLoginFailed(true);
-
+    // otherwise set loginFailed to false
     setLoginFailed(false);
     // const user = jwtDecode(result.data);
-    // authContext.setUser(user);
-    // // console.log(user); //auth token
+    // AuthContext.setUser(user);
+    // console.log(user);            //  user object
+    // console.log(result.data);     //  auth token
     // authStorage.storeToken(result.data);
-    // // // // // // // // // // // // //
-    // auth.logIn(result.data);
+    auth.logIn(result.data);
   };
 
   return (
@@ -76,37 +79,33 @@ const LoginScreen: React.FC<LoginScreenProps> = ({
 
       <AppForm
         initialValues={{ email: "", password: "" }}
-        onSubmit={(values: any) => console.log(values)}
-        // onSubmit={handleSubmit}
+        // onSubmit={(values) => console.log(values)}
+        onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         <AppErrorMessage
           error='Invalid email and/or password'
           visible={loginFailed}
         />
-        <AppFormField // email
+        <AppFormField
+          name="email"
+          placeholder="Email"
+          textContentType="emailAddress"
           autoCapitalize="none"
           autoCorrect={false}
           icon="email"
           keyboardType="email-address"
-          name="email"
-          placeholder="Email"
-          // ios autofill from keyChain 
-          textContentType="emailAddress"
         />
-        <AppFormField // password
+        <AppFormField
+          name="password"
+          placeholder="Password"
+          textContentType="password"
           autoCapitalize="none"
           autoCorrect={false}
           icon="lock"
-          name="password"
-          placeholder="Password"
           secureTextEntry
-          // ios autofill from keyChain 
-          textContentType="password"
         />
-        <AppSubmitButton
-          title="Login"
-        />
+        <AppSubmitButton title="Login" />
       </AppForm>
     </Screen>
   )
@@ -117,10 +116,10 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   logo: {
-    width: 180,
-    height: 180,
+    width: 200,
+    height: 200,
     alignSelf: "center",
-    marginTop: 20,
+    marginTop: 50,
     marginBottom: 20,
   },
 }) // style sheet for LoginScreen

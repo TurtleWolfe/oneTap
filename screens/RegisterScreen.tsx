@@ -1,8 +1,11 @@
+//  Colective Minds Inc.
 //  TurtleWolfe.com // //custom components
 //  RegisterScreen
 //  RegisterScreen // //custom components
 //  RegisterScreen
 //  TurtleWolfe.com // //custom components
+//  Colective Minds Inc.
+
 import React, { useState } from 'react'
 import {
   StyleSheet,
@@ -15,8 +18,8 @@ import usersApi from "../api/users";
 import authApi from "../api/auth";
 import useAuth from '../auth/useAuth';
 
-
 import {
+  AppErrorMessage as ErrorMessage,
   AppForm as Form,
   AppFormField as FormField,
   AppSubmitButton,
@@ -24,7 +27,7 @@ import {
 import useApi from "../hooks/useApi";
 // import ActivityIndicator from "../components/AppActivityIndicator";
 // import AppActivityIndicator from '../components/AppActivityIndicator';
-import ActivityIndicator from "../components/ActivityIndicator";
+import AppActivityIndicator from "../components/AppActivityIndicator";
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label("Name"),
   email: Yup.string().required().email().label("Email"),
@@ -42,6 +45,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({
 
   const handleSubmit = async (userInfo: any) => {
     const result = await registerApi.request(userInfo);
+    // const result = await usersApi.register(userInfo);
 
     if (!result.ok) {
       if (result.data) setError(result.data.error);
@@ -61,7 +65,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({
 
   return (
     <>
-      <ActivityIndicator
+      <AppActivityIndicator
         visible={registerApi.loading || loginApi.loading}
       // visible={true}
       />
@@ -71,6 +75,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({
           onSubmit={handleSubmit}
           validationSchema={validationSchema}
         >
+          <ErrorMessage error={error} visible={error} />
           <FormField
             autoCorrect={false}
             icon="account"

@@ -116,7 +116,7 @@ function TabOneNavigator() {
     <TabOneStack.Navigator>
       <TabOneStack.Screen
         name="TabOneScreen"
-        component={TabOneScreen}
+        component={FeedNavigator}
         // options={{ headerTitle: 'Tab One Title' }}
         options={{
           headerTitle: props => <FancyLogo {...props} />,

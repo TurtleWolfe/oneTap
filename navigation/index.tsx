@@ -14,14 +14,44 @@ import AuthNavigator from './AuthNavigator';
 import BottomTabNavigator from './BottomTabNavigator';
 import OfflineNotice from '../components/OfflineNotice';
 import LinkingConfiguration from './LinkingConfiguration';
+import AuthContext from '../auth/context';
+import authStorage from '../auth/storage';
+import AppLoading from 'expo-app-loading';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+  const [user, setUser] = React.useState<any>();
+  const [isReady, setIsReady] = React.useState(false);
+
+  const restoreUser = async () => {
+    // If we have a user in storage, restore it.
+    const user = await authStorage.getUser();
+    if (user) setUser(user);
+  };
+  // if not ready show loading screen
+  if (!isReady)
+    return (
+      <AppLoading
+        startAsync={restoreUser}
+        onFinish={() => setIsReady(true)}
+        onError={console.warn}
+      />
+    );
+  // otherwise show the navigator
   return (
-    <NavigationContainer
-      linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <RootNavigator />
-    </NavigationContainer>
+    <AuthContext.Provider
+      value={{ user, setUser }}
+    >
+      <OfflineNotice />
+      <NavigationContainer
+        linking={LinkingConfiguration}
+        theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        {user ?
+          // if user is logged in, show the RootNavigator
+          <RootNavigator /> :
+          // otherwise show the Welcome Screen so the user can log in
+          <AuthNavigator />}
+      </NavigationContainer>
+    </AuthContext.Provider>
   );
 }
 
@@ -31,13 +61,9 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <>
-      <OfflineNotice />
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {/* <Stack.Screen name="Auth" component={AuthNavigator} /> */}
-        <Stack.Screen name="Root" component={BottomTabNavigator} />
-        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
-      </Stack.Navigator>
-    </>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Root" component={BottomTabNavigator} />
+      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+    </Stack.Navigator>
   );
 }

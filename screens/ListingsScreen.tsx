@@ -65,6 +65,9 @@ const ListingsScreen: React.FC<ListingsScreenProps> = ({
 
   return (
     <>
+      <AppActivityIndicator
+        visible={getListingsApi.loading}
+      />
       <AppScreen
         style={styles.screen}
       >
@@ -73,14 +76,10 @@ const ListingsScreen: React.FC<ListingsScreenProps> = ({
             <AppText>Couldn't retrieve the listings.</AppText>
             <AppButton
               title="Retry"
-              onPress={getListingsApi.loadListings}
+              onPress={getListingsApi.request}
             />
           </>
-        )
-        }
-        <AppActivityIndicator
-          visible={getListingsApi.loading}
-        />
+        )}
         <FlatList
           style={styles.flist}
           data={getListingsApi.data}
