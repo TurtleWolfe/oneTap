@@ -17,6 +17,7 @@ import LinkingConfiguration from './LinkingConfiguration';
 import AuthContext from '../auth/context';
 import authStorage from '../auth/storage';
 import AppLoading from 'expo-app-loading';
+import { navigationRef } from './rootNavigation';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   const [user, setUser] = React.useState<any>();
@@ -37,12 +38,16 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
       />
     );
   // otherwise show the navigator
+  // const navigationRef = React.createRef();
+  // const navigation = navigationRef.current;
+
   return (
     <AuthContext.Provider
       value={{ user, setUser }}
     >
       <OfflineNotice />
       <NavigationContainer
+        ref={navigationRef}
         linking={LinkingConfiguration}
         theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         {user ?

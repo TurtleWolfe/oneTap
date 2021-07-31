@@ -16,7 +16,7 @@ import {
   View,
 } from 'react-native'
 import AppText from "../components/Text";
-import ContactSellerForm from '../components/ContactSellerForm';
+import ContactSellerForm from '../components/forms/ContactSellerForm';
 import AppListItem from "../components/lists/AppListItem";
 import defaultStyles from '../config/styles';
 import AppScreen from '../components/Screen';
@@ -75,8 +75,8 @@ const ListingDetailsScreen: React.FC<ListingDetailsScreenProps> = ({
               />
             </View>
             {/* <ContactSellerForm
-            listing={listing}
-          /> */}
+              listing={listing}
+            /> */}
           </View>
         </View>
       </KeyboardAvoidingView>
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 300,
+    height: 270,
     backgroundColor: defaultStyles.colors.mediumGrey,
   },
   detailsContainer: {
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   userContainer: {
     borderRadius: 20,
     overflow: "hidden",
-    marginVertical: 40,
+    marginVertical: 10,
     // backgroundColor: defaultStyles.colors.lightGrey,
   },
   appListItem: {

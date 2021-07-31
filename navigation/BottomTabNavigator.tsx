@@ -27,13 +27,38 @@ import {
 import defaultStyles from '../config/styles';
 import FeedNavigator from './FeedNavigator';
 import AccountNavigator from './AccountNavigator';
+// import expoPushTokensApi from '../api/expoPushTokens';
+// import * as Notifications from 'expo-notifications';
+// import * as Permissions from 'expo-permissions';
 import NewListingButton from './NewListingButton';
 import routes from './routes';
+import navigation from './rootNavigation';
+import useNotifications from '../hooks/useNotifications';
+
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
+  useNotifications();
+  // React.useEffect(() => {
+  //   registerForPushNotifications();
 
+  //   Notifications.addNotificationResponseReceivedListener((notification) => {
+  //     navigation.navigate('Account');
+  //   });
+  // }, []);
+
+  // const registerForPushNotifications = async () => {
+  //   try {
+  //     const permission = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+  //     if (!permission.granted) return;
+  //     const token = await Notifications.getExpoPushTokenAsync();
+  //     expoPushTokensApi.register(token);
+  //     console.log(token);
+  //   } catch (error) {
+  //     console.log('Error getting the push token', error);
+  //   }
+  // }
+  const colorScheme = useColorScheme();
   return (
     <BottomTab.Navigator
       initialRouteName="TabOne"

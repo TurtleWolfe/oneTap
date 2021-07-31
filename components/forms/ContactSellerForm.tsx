@@ -1,10 +1,11 @@
 import React from "react";
 import { Alert, Keyboard } from "react-native";
-import { Notifications } from "expo";
+// import { Notifications } from "expo";
+import * as Notifications from 'expo-notifications';
 import * as Yup from "yup";
 
-import { Form, FormField, SubmitButton } from "./forms";
-import messagesApi from "../api/messages";
+import { AppForm, AppFormField, AppSubmitButton } from ".";
+import messagesApi from "../../api/messages";
 
 function ContactSellerForm({ listing }) {
   const handleSubmit = async ({ message }, { resetForm }) => {
@@ -26,20 +27,20 @@ function ContactSellerForm({ listing }) {
   };
 
   return (
-    <Form
+    <AppForm
       initialValues={{ message: "" }}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      <FormField
+      <AppFormField
         maxLength={255}
         multiline
         name="message"
         numberOfLines={3}
         placeholder="Message..."
       />
-      <SubmitButton title="Contact Seller" />
-    </Form>
+      <AppSubmitButton title="Contact Seller" />
+    </AppForm>
   );
 }
 
