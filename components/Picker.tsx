@@ -115,7 +115,7 @@ const AppPicker: React.FC<AppPickerProps> = ({
                 label={item.label}
                 onPress={() => {
                   setModalVisible(false);
-                  console.log(item);
+                  // console.log(item);
                   onSelectItem(item);
                 }}
               />

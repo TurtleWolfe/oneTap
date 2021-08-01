@@ -1,6 +1,8 @@
 // import { AsyncStorage } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import moment from "moment";
+// import moment from "moment";
+import dayjs from "dayjs";
+import logger from './logger';
 
 const prefix = "cache";
 const expiryInMinutes = 5;
@@ -16,14 +18,15 @@ const store = async (
     };
     await AsyncStorage.setItem(prefix + key, JSON.stringify(item));
   } catch (error) {
-    console.log(error);
+    logger.log(error);
   }
 };//  store
 
-const isExpired = (item: { timestamp: moment.MomentInput; }) => {
-  const now = moment(Date.now());
-  const storedTime = moment(item.timestamp);
-  return now.diff(storedTime, "minutes") > expiryInMinutes;
+const isExpired = (item: { timestamp: string | number | Date | dayjs.Dayjs | null | undefined; }) => {
+  // const now = moment(Date.now());
+  const now = dayjs();
+  const storedTime = dayjs(item.timestamp);
+  return now.diff(storedTime, "minute") > expiryInMinutes;
 };//  isExpired
 
 const get = async (key: string) => {
@@ -42,7 +45,8 @@ const get = async (key: string) => {
 
     return item.value;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    logger.log(error);
   }
 };//  get
 

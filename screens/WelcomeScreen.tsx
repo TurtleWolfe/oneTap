@@ -14,6 +14,7 @@ import {
   Text,
   View,
 } from 'react-native'
+import logger from '../utility/logger';
 import AppButton from "../components/Button";
 import routes from '../navigation/routes'
 import defaultStyles from '../config/styles';
@@ -45,7 +46,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
           onPress={() =>
             // navigation.navigate("Login")
             navigation.navigate(routes.LOGIN)
-            // console.log('tapped Login Button')
+            // logger.log('tapped Login Button')
           }
         />
         <AppButton

@@ -18,8 +18,11 @@ import AuthContext from '../auth/context';
 import authStorage from '../auth/storage';
 import AppLoading from 'expo-app-loading';
 import { navigationRef } from './rootNavigation';
+import logger from '../utility/logger';
+logger.start();
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+  // logger.notify(new Error('Notify, Test error'));
   const [user, setUser] = React.useState<any>();
   const [isReady, setIsReady] = React.useState(false);
 

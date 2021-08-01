@@ -30,7 +30,7 @@ const AppScreen: React.FC<AppScreenProps> = ({
     <ImageBackground
       blurRadius={3}
       style={styles.background}
-      source={require("../assets/images/background.png")}
+      source={require("../assets/images/splash.png")}
     >
 
       <SafeAreaView style={[styles.screen, style]}>

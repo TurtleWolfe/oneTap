@@ -23,6 +23,7 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as ImagePicker from "expo-image-picker";
 import defaultStyles from "../config/styles";
+import logger from '../utility/logger';
 
 interface AppImageInputProps {
   // imageUri?: any;
@@ -68,13 +69,13 @@ const AppImageInput: React.FC<AppImageInputProps> = ({
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         quality: 0.5,
       });
-      console.log(result);
+      // console.log(result);
 
       if (!result.cancelled) {
         onChangeImage(result.uri);
       }
     } catch (error) {
-      console.log('Error reading an image', error);
+      logger.log(error);
 
     }
 

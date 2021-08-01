@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 // import { Notifications } from "expo";
 import * as Notifications from 'expo-notifications';
-
+import logger from '../utility/logger';
 // import * as Permissions from "expo-permissions";
 
 import expoPushTokensApi from "../api/expoPushTokens";
@@ -13,9 +13,9 @@ export default useNotifications = (notificationListener?: (event: Notifications.
     // effect
     registerForPushNotifications();
 
-    // Notifications.addListener(notification => console.log(notification));
-    // Notifications.addNotificationReceivedListener(notification => console.log(notification));
-    // Notifications.addNotificationResponseReceivedListener(notification => console.log(notification));
+    // Notifications.addListener(notification => logger.log(notification));
+    // Notifications.addNotificationReceivedListener(notification => logger.log(notification));
+    // Notifications.addNotificationResponseReceivedListener(notification => logger.log(notification));
     if (notificationListener)
       Notifications.addNotificationResponseReceivedListener((notificationListener) => {
         //  navigation..
@@ -32,15 +32,15 @@ const registerForPushNotifications = async () => {
     // const permission = await Permissions.askAsync(Permissions.NOTIFICATIONS)
     // if (!permission.granted) return;
     const token = await Notifications.getExpoPushTokenAsync();
-    console.log(token);
+    // logger.log(token);
     expoPushTokens.register(token);
   } catch (error) {
-    console.log('error getting a push token', error);
+    logger.log(error);
   }
 };
 
 
 
-    // Notifications.addListener(notification => console.log(notification));
-    // Notifications.addNotificationReceivedListener(notification => console.log(notification));
-    // Notifications.addNotificationResponseReceivedListener(notification => console.log(notification));
+    // Notifications.addListener(notification => logger.log(notification));
+    // Notifications.addNotificationReceivedListener(notification => logger.log(notification));
+    // Notifications.addNotificationResponseReceivedListener(notification => logger.log(notification));

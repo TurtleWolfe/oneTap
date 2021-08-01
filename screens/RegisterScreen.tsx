@@ -28,6 +28,7 @@ import useApi from "../hooks/useApi";
 // import ActivityIndicator from "../components/AppActivityIndicator";
 // import AppActivityIndicator from '../components/AppActivityIndicator';
 import AppActivityIndicator from "../components/AppActivityIndicator";
+import logger from '../utility/logger';
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label("Name"),
   email: Yup.string().required().email().label("Email"),
@@ -51,7 +52,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({
       if (result.data) setError(result.data.error);
       else {
         setError("An unexpected error occurred.");
-        console.log(result);
+        logger.log(result);
       }
       return;
     }
